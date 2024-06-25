@@ -5,10 +5,12 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class block : MonoBehaviour
 {
+    public int score = 10;
+    public BlockGenerator blockGenerator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        blockGenerator = FindObjectOfType(BlockGenerator);
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class block : MonoBehaviour
         {
             Debug.LogError("ScoreScriptのインスタンスがありません。");
         }
-
+        blockGenerator.BlockDestroyerd();
         Destroy(gameObject);
     }
 }
